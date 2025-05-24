@@ -113,10 +113,31 @@ const ClienteForm = () => {
         </div>
 
         <div style={{ marginTop: "15px" }}>
-          <button type="submit" style={{ marginRight: "10px" }}>
-            Iniciar compra
-          </button>
-          <button type="button" onClick={limpiarCampos}>
+  <button 
+    type="submit" 
+    style={{
+      backgroundColor: "#3498db", // rojo
+      color: "white",
+      padding: "10px 20px",
+      border: "none",
+      borderRadius: "5px",
+      marginLeft: "10px", // separación con el botón anterior
+      cursor: "pointer"
+    }}
+  >
+    Iniciar compra
+  </button>
+          <button type="button" onClick={limpiarCampos}
+          style={{
+            backgroundColor: "#3498db", // rojo
+            color: "white",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "5px",
+            marginLeft: "10px", // separación con el botón anterior
+            cursor: "pointer"
+          }}
+          >
             Limpiar campos
           </button>
         </div>

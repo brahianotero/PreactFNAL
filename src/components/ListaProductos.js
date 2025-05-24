@@ -11,7 +11,7 @@ const ListaProductos = () => {
 
   const [productos, setProductos] = useState([]);
   const [pagina, setPagina] = useState(1);
-  const [detalle, setDetalle] = useState(null);
+ 
 
   const [filtroMarca, setFiltroMarca] = useState("");
   const [filtroCategoria, setFiltroCategoria] = useState("");
@@ -69,13 +69,15 @@ const ListaProductos = () => {
       <div className="flex justify-between mb-4">
         <button
           onClick={() => navigate("/")}
-          className="bg-red-500 text-white px-4 py-2 rounded"
+          /*className="bg-red-500 text-white px-4 py-2 rounded"*/
+          style={{ backgroundColor: '#f39c12', color: 'white' }}
         >
           Cancelar compra
         </button>
         <button
           onClick={() => navigate("/carrito")}
-          className="bg-green-600 text-white px-4 py-2 rounded"
+          /*className="bg-green-600 text-white px-4 py-2 rounded"*/
+          style={{ backgroundColor: '#f39c12', color: 'white' }}
         >
           Completar compra
         </button>
@@ -104,13 +106,14 @@ const ListaProductos = () => {
       </div>
 
       {/* Lista de productos filtrados */}
+      {/* Tarjetas de producto */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {productosFiltrados.length > 0 ? (
-          productosFiltrados.map((producto) => (
+          productosFiltrados.map(producto => (
             <TarjetaProducto
               key={producto.id}
               producto={producto}
-              onVerDetalle={setDetalle}
+              onAgregar={agregarAlCarrito}
             />
           ))
         ) : (
@@ -130,14 +133,8 @@ const ListaProductos = () => {
         )}
       </div>
 
-      {/* Detalle del producto */}
-      {detalle && (
-        <DetalleProducto
-          producto={detalle}
-          onCerrar={() => setDetalle(null)}
-          onAgregar={agregarAlCarrito}
-        />
-      )}
+        
+      
     </div>
   );
 };

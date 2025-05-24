@@ -123,17 +123,18 @@ const Carrito = () => {
       <div className="flex gap-4">
         <button
           onClick={handleConfirmar}
-          className="bg-green-600 text-white px-4 py-2 rounded"
+          style={{ backgroundColor: '#f39c12', color: 'white' }}/* color a los botones */
           disabled={confirmado}
         >
           Confirmar compra
         </button>
         <button
-          onClick={handleLimpiar}
-          className="bg-red-500 text-white px-4 py-2 rounded"
-        >
-          Limpiar campos
-        </button>
+         onClick={handleLimpiar}
+           style={{ backgroundColor: '#f39c12', color: 'white' }}
+          className="px-4 py-2 rounded"
+>
+  Limpiar campos
+</button>
       </div>
 
       {confirmado && (
