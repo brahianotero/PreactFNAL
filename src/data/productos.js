@@ -1,13 +1,25 @@
 
-import dellImage from "../images/DELL.png";
-// src/data/productos.js
-const productos = Array.from({ length: 50 }, (_, i) => ({
-  id: i + 1, // IDs únicos del 1 al 50
-  nombre: `Producto ${i + 1}`,
-  marca: ["HP", "Dell", "Lenovo"][i % 3], // Cicla entre las 3 marcas
-  categoria: ["Laptop", "Monitor", "Teclado"][i % 3], // Cicla entre las 3 categorías
-  precio: 500000 + i * 50000,
-  descripcion: `Este es el producto número ${i + 1}`,
-  imagen: `https://via.placeholder.com/150?text=Producto+${i + 1}`,
-}));
+//imagenssss
+import DELLImage from "../images/DELL.png";
+import HPImage from "../images/HP.png";
+import LENOVOImage from "../images/LENOVO.png";
+
+const productos = Array.from({ length: 50 }, (_, i) => {
+  const marca = ["HP", "Dell", "Lenovo"][i % 3];
+  const categoria = ["Laptop", "Monitor", "Teclado"][i % 3];
+
+  const imagen =
+    marca === "Dell" ? DELLImage : marca === "HP" ? HPImage : LENOVOImage;
+
+  return {
+    id: i + 1,
+    nombre: `Producto ${i + 1}`,
+    marca,
+    categoria,
+    precio: 500000 + i * 50000,
+    descripcion: `Este es el producto número ${i + 1}`,
+    imagen,
+  };
+});
+
 export default productos;

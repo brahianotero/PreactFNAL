@@ -17,7 +17,7 @@ const ListaProductos = () => {
   const [filtroCategoria, setFiltroCategoria] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
 
-  // Cargar los productos (15 por página) sin duplicarlos
+  // Cargar productos (15 por página) sin duplicarlos
   const cargarMas = () => {
     const inicio = (pagina - 1) * 15;
     const nuevos = productosData.slice(inicio, inicio + 15);
@@ -36,7 +36,7 @@ const ListaProductos = () => {
     cargarMas();
   }, []);
 
-  // Filtrar productos y mostrar logs para depuración
+  // Filtros activos
   useEffect(() => {
     console.log("🧪 Filtro activo");
     console.log("Marca seleccionada:", filtroMarca);
@@ -65,7 +65,7 @@ const ListaProductos = () => {
 
   return (
     <div className="p-4">
-      {/* Navegación de la compra y los botones */}
+      {/* Navegación */}
       <div className="flex justify-between mb-4">
         <button
           onClick={() => navigate("/")}
@@ -81,12 +81,12 @@ const ListaProductos = () => {
         </button>
       </div>
 
-      {/*Esta parte es para filtrar las productos por marca */}
-      <div className="flex gap-4 mb-4">
+      {/* Filtros */}
+      <div className="flex gap-4 mb-4 items-center">
         <select
           value={filtroMarca}
           onChange={(e) => setFiltroMarca(e.target.value)}
-          className="p-2 border"
+          className="filtro-select"
         >
           <option value="">Filtrar por Marca</option>
           <option value="HP">HP</option>
@@ -99,11 +99,11 @@ const ListaProductos = () => {
           placeholder="Filtrar por categoría"
           value={filtroCategoria}
           onChange={(e) => setFiltroCategoria(e.target.value)}
-          className="p-2 border"
+          className="filtro-input"
         />
       </div>
 
-      {/* En codigo me permite filtrar los productos */}
+      {/* Lista de productos filtrados */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {productosFiltrados.length > 0 ? (
           productosFiltrados.map((producto) => (
@@ -118,7 +118,7 @@ const ListaProductos = () => {
         )}
       </div>
 
-      {/* aqui esta el boton que nos permite cargar mas productos  */}
+      {/* Botón cargar más */}
       <div className="flex justify-center mt-6">
         {productos.length < productosData.length && (
           <button
@@ -130,7 +130,7 @@ const ListaProductos = () => {
         )}
       </div>
 
-      {/* podemos visulizar el detalle del producto que estamos selecionado */}
+      {/* Detalle del producto */}
       {detalle && (
         <DetalleProducto
           producto={detalle}
