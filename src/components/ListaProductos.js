@@ -38,28 +38,29 @@ const ListaProductos = () => {
 
   // Filtros activos
   useEffect(() => {
-    console.log("🧪 Filtro activo");
+    console.log("Filtro activo");
     console.log("Marca seleccionada:", filtroMarca);
     console.log("Categoría seleccionada:", filtroCategoria);
     console.log("Productos cargados:", productos.length);
 
     const filtrados = productos.filter((p) => {
       if (filtroMarca && p.marca !== filtroMarca) {
-        console.log(`⛔ Rechazado por marca: ${p.nombre} (${p.marca})`);
+       /* console.log(` Rechazado por marca: ${p.nombre} (${p.marca})`);*/
         return false;
       }
       if (
         filtroCategoria &&
         !p.categoria.toLowerCase().includes(filtroCategoria.toLowerCase())
       ) {
-        console.log(`⛔ Rechazado por categoría: ${p.nombre} (${p.categoria})`);
+       
+       /* console.log(`Rechazado por categoría: ${p.nombre} (${p.categoria})`);*/
         return false;
       }
-      console.log(`✅ Aceptado: ${p.nombre}`);
+      console.log(` Aceptado: ${p.nombre}`);
       return true;
     });
 
-    console.log("✅ Total productos filtrados:", filtrados.length);
+    console.log(" Total productos filtrados:", filtrados.length);
     setProductosFiltrados(filtrados);
   }, [productos, filtroMarca, filtroCategoria]);
 
@@ -70,14 +71,14 @@ const ListaProductos = () => {
         <button
           onClick={() => navigate("/")}
           /*className="bg-red-500 text-white px-4 py-2 rounded"*/
-          style={{ backgroundColor: '#f39c12', color: 'white' }}
+          style={{ backgroundColor: '#57bcff', color: 'white',marginRight: '10px' }}
         >
           Cancelar compra
         </button>
         <button
           onClick={() => navigate("/carrito")}
           /*className="bg-green-600 text-white px-4 py-2 rounded"*/
-          style={{ backgroundColor: '#f39c12', color: 'white' }}
+          style={{ backgroundColor: '#57bcff', color: 'white',marginRight: '10px' }}
         >
           Completar compra
         </button>

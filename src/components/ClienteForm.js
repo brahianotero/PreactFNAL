@@ -116,7 +116,7 @@ const ClienteForm = () => {
   <button 
     type="submit" 
     style={{
-      backgroundColor: "#3498db", // rojo
+      backgroundColor: "#57bcff", // 
       color: "white",
       padding: "10px 20px",
       border: "none",
@@ -129,7 +129,7 @@ const ClienteForm = () => {
   </button>
           <button type="button" onClick={limpiarCampos}
           style={{
-            backgroundColor: "#3498db", // rojo
+            backgroundColor: "#57bcff", //
             color: "white",
             padding: "10px 20px",
             border: "none",

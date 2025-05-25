@@ -20,13 +20,14 @@ const DetalleProducto = ({ producto, onCerrar, onAgregar }) => {
           onAgregar(producto);
           onCerrar();
         }}
-        className="mt-3 bg-green-600 text-white px-4 py-2 rounded"
+        style={{ backgroundColor: '#57bcff', color: 'white', marginRight: '10px' }}/* color a los botones */
       >
         Agregar al carrito
       </button>
       <button
         onClick={onCerrar}
-        className="ml-2 mt-3 bg-gray-400 text-white px-4 py-2 rounded"
+       
+        style={{ backgroundColor: '#57bcff', color: 'white',marginRight: '10px' }}/* color a los botones */
       >
         Cerrar
       </button>
