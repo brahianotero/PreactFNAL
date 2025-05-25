@@ -23,7 +23,7 @@ const TarjetaProducto = ({ producto, onAgregar }) => {
 
       <button
         onClick={() => setOpen(!open)}
-        className="btn-ver-detalle bg-blue-500 text-white px-3 py-1 rounded mb-2"
+        className="btn-ver-detalle bg-[#57bcff] text-white px-3 py-1 rounded mb-2"
       >
         {open ? "Ocultar Detalle" : "Ver Detalle"}
       </button>

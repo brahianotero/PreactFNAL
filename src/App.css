@@ -68,7 +68,7 @@ button {
 }
 
 .btn-ver-detalle {
-  background-color: #2563eb;
+  background-color: #57bcff;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -78,7 +78,7 @@ button {
 }
 
 .btn-ver-detalle:hover {
-  background-color: #1d4ed8;
+  background-color: #57bcff;
 }
 
 /*filtro*/
